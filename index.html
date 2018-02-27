@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UFT-8" />
+  <!--Jquery host CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--Making site responsive mobile/desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYT Article</title>
+  <link rel="stylesheet" type="text/css" href="_css/home_style.css" />
+
+</head>
+
+<body>
+
+  <header>
+    <img src="_images/logo.png" alt="newspaper logo" class="logo">
+    <nav>
+      <ul type="none">
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">About</a>
+        </li>
+        <li>
+          <a href="">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="home-intro">
+    <div class="container">
+      <h1 class="title">New York Times </br>
+        <span>Article Search</span>
+      </h1>
+    </div>
+  </section>
+
+
+  <section class="home-search-area">
+    <div class="home-search-intro">
+      <h2>Fast delivery of articles from the best source</h2>
+    </div>
+
+    <form class="form">
+        <p>
+            <input id="search" type="text" placeholder="Search articles" class="text-box" class="search" >
+        </p>    
+          <!-- All buttons in forms submit, to overide use: button style="button"-->
+      <button id="submit" class=btn-style>SEARCH</button>
+    </form>
+    
+    <!-- A quick info about this site -->
+    <div class = "about_mysite">
+       <p>
+         2018/02/25</br> 
+        </br> 
+         After studying the basics of Html5, CSS and Javascript,
+         I decided to challange myself to try to design and build my first real 
+         website with the help of documentations and skills obtained.
+         Utilized response design for mobile and implemented the New York 
+         Times article search API (Application programming interface).</br> 
+        </br> 
+         Arthur
+
+       </p>         
+
+    </div>
+
+    <div class="prev_next_btn">
+        <nav class="button_visi">
+          <button class="stylebtn" id="prev" >Previous 10</button>
+          <button class="stylebtn" id="next" >Next 10</button>
+        </nav>
+
+      </div>
+    </div>
+
+   <div id="results-container">
+    <div id="show-result">
+
+    <!-- RESULTS WILL DISPLAY HERE -->
+
+    </div>
+  </div>
+
+  </section>
+
+  <footer>
+    <section class="footer-text">
+      <h3>RECIFE</BR>PERNAMBUCO,BR</h3>
+      <h3>ARTHUR LIMA</h3>
+      <h3>arthur-david@hotmail.com</h3>
+
+    </section>
+
+  </footer>
+  
+  <!--Loading Javascript -->
+  <script src="_javascript/mySearch.js"></script> 
+
+</body>
+
+
+</html>
