@@ -22,6 +22,16 @@ var pBtn = document.querySelector("#prev");
 var searchForm = document.querySelector("form");
 //Page variable
 var pgNumber = 0;
+
+var pg_zero = document.querySelector("form");
+
+//when submiting search again, zero the page var to see results from beginning
+function pgZero (){
+    pgNumber=0;
+
+}
+
+
 //About my site 
 var aboutMysite = document.querySelector(".about_mysite");
 aboutMysite.style.display = "block";
@@ -29,10 +39,13 @@ aboutMysite.style.display = "block";
 // ------------------------------------------------------
 
 //Search and button event
-
+pg_zero.addEventListener("submit", pgZero);
 searchForm.addEventListener("submit", getResults);
 nBtn.addEventListener("click", nextPage);
 pBtn.addEventListener("click", previousPage);
+
+
+
 
 
 function getResults(e) {
@@ -149,11 +162,13 @@ function showResults(foundJSON) {
 
 function nextPage(e) {
     pgNumber++;
+    
     getResults(e);
 }
 function previousPage(e) {
     if (pgNumber > 0) {
         pgNumber--;
+        
     } else {
         return;
     }
