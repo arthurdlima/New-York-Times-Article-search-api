@@ -4,11 +4,8 @@ var apiURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 var apiKey = "8b7bd25e12164826ba91787497ea5c6b";
 fullURL = "";
 
-
-//Now I need to select the DOM elements to manipulate in script
-
 //------------------ DOM VARIABLES ----------------------
-//hiding the nav, dont need it visible when page loads
+//hiding the nav
 var btnVisibility = document.querySelector(".button_visi");
 btnVisibility.style.display = "none";
 //where to display the data
@@ -31,7 +28,6 @@ function pgZero (){
 
 }
 
-
 //About my site 
 var aboutMysite = document.querySelector(".about_mysite");
 aboutMysite.style.display = "block";
@@ -43,9 +39,6 @@ pg_zero.addEventListener("submit", pgZero);
 searchForm.addEventListener("submit", getResults);
 nBtn.addEventListener("click", nextPage);
 pBtn.addEventListener("click", previousPage);
-
-
-
 
 
 function getResults(e) {
@@ -107,7 +100,6 @@ function showResults(foundJSON) {
             article.style.paddingLeft = "2em";
             article.style.paddingRight = "2em";
 
-
             link.style.color = "white";
             link.style.textDecoration = "none";
             link.style.textTransform = "uppercase";
@@ -116,33 +108,29 @@ function showResults(foundJSON) {
             date.style.color = "white";
             date.style.textDecoration = "none";
             date.style.textTransform = "uppercase";
-            
-              
-
-
-
 
             snippet.style.color = "white";
             snippet.style.textDecoration = "none";
             snippet.style.fontSize = "1rem";
 
-
             //variables to recieve api data from current
             link.href = current.web_url;
             link.textContent = current.headline.main;
-
             snippet.textContent = current.snippet;
+            
             // Used this function to get only the part of the date, not time.
             var date_string = current.pub_date;
             function fixD (date_string) {return date_string.substr(0,9)};
             if (date_string != null){
             date.textContent = fixD(date_string);
             }
+            
             //Loading images if present
             if (current.multimedia.length > 0) {
                 img.src = 'http://www.nytimes.com/' + current.multimedia[0].url;
                 img.alt = current.headline.main;
             }
+            
             //Actually displaying on the html
             //clearfix to fix image and text scale
             clearfix.setAttribute("class", "clearfix");
@@ -153,7 +141,6 @@ function showResults(foundJSON) {
             article.appendChild(snippet);
             article.appendChild(clearfix);
             displayArea.appendChild(article);
-
 
         }
         console.log(displayArea);
